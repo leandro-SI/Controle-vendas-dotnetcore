@@ -44,6 +44,13 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
   getMenuItems(): MenuItem[] {
     return [
       new MenuItem(this.l('HomePage'), '/app/home', 'fas fa-home'),
+      new MenuItem(this.l('Cidades'), '/app/cidades', 'fas fa-city'),
+      new MenuItem(this.l('Fabricantes'), '/app/fabricantes', 'fas fa-industry'),
+      new MenuItem(this.l('Produtos'), '/app/produtos', 'fab fa-product-hunt'),
+      new MenuItem(this.l('Pessoas'), '/app/pessoas', 'fas fa-user-friends'),
+      new MenuItem(this.l('Vendas'), '/app/vendas', 'fas fa-money-check-alt'),
+      new MenuItem(this.l('RelatorioVendas'), '/app/relatorioVendas', 'fas fa-sticky-note'),
+      new MenuItem(this.l('RelatorioContas'), '/app/relatorioContas', 'fas fa-sticky-note'),
       new MenuItem(
         this.l('Tenants'),
         '/app/tenants',
@@ -62,58 +69,6 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
         'fas fa-theater-masks',
         'Pages.Roles'
       ),
-      new MenuItem(this.l('About'), '/app/about', 'fas fa-info-circle'),
-      new MenuItem(this.l('MultiLevelMenu'), '', 'fas fa-circle', '', [
-        new MenuItem('ASP.NET Boilerplate', '', 'fas fa-dot-circle', '', [
-          new MenuItem(
-            'Home',
-            'https://aspnetboilerplate.com?ref=abptmpl',
-            'far fa-circle'
-          ),
-          new MenuItem(
-            'Templates',
-            'https://aspnetboilerplate.com/Templates?ref=abptmpl',
-            'far fa-circle'
-          ),
-          new MenuItem(
-            'Samples',
-            'https://aspnetboilerplate.com/Samples?ref=abptmpl',
-            'far fa-circle'
-          ),
-          new MenuItem(
-            'Documents',
-            'https://aspnetboilerplate.com/Pages/Documents?ref=abptmpl',
-            'far fa-circle'
-          ),
-        ]),
-        new MenuItem('ASP.NET Zero', '', 'fas fa-dot-circle', '', [
-          new MenuItem(
-            'Home',
-            'https://aspnetzero.com?ref=abptmpl',
-            'far fa-circle'
-          ),
-          new MenuItem(
-            'Features',
-            'https://aspnetzero.com/Features?ref=abptmpl',
-            'far fa-circle'
-          ),
-          new MenuItem(
-            'Pricing',
-            'https://aspnetzero.com/Pricing?ref=abptmpl#pricing',
-            'far fa-circle'
-          ),
-          new MenuItem(
-            'Faq',
-            'https://aspnetzero.com/Faq?ref=abptmpl',
-            'far fa-circle'
-          ),
-          new MenuItem(
-            'Documents',
-            'https://aspnetzero.com/Documents?ref=abptmpl',
-            'far fa-circle'
-          )
-        ])
-      ])
     ];
   }
 
