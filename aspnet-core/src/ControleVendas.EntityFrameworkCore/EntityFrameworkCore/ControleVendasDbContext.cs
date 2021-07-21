@@ -12,6 +12,7 @@ namespace ControleVendas.EntityFrameworkCore
         /* Define a DbSet for each entity of the application */
 
         public DbSet<Estado> Estado { get; set; }
+        public DbSet<Cidade> Cidade { get; set; }
 
         public ControleVendasDbContext(DbContextOptions<ControleVendasDbContext> options)
             : base(options)
