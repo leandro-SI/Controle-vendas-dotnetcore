@@ -7,6 +7,7 @@ using Abp.EntityFrameworkCore.Uow;
 using Abp.MultiTenancy;
 using ControleVendas.EntityFrameworkCore.Seed.Host;
 using ControleVendas.EntityFrameworkCore.Seed.Tenants;
+using ControleVendas.EntityFrameworkCore.Seed.Estado;
 
 namespace ControleVendas.EntityFrameworkCore.Seed
 {
@@ -27,6 +28,8 @@ namespace ControleVendas.EntityFrameworkCore.Seed
             // Default tenant seed (in host database).
             new DefaultTenantBuilder(context).Create();
             new TenantRoleAndUserBuilder(context, 1).Create();
+            new DefaultEstadoBuilder(context).Create();
+
         }
 
         private static void WithDbContext<TDbContext>(IIocResolver iocResolver, Action<TDbContext> contextAction)
