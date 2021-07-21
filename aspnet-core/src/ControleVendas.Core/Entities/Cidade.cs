@@ -1,4 +1,5 @@
-﻿using Abp.Domain.Entities.Auditing;
+﻿using Abp.AutoMapper;
+using Abp.Domain.Entities.Auditing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,6 +8,8 @@ using System.Text;
 
 namespace ControleVendas.Entities
 {
+
+    [AutoMapTo(typeof(Cidade))]
     public class Cidade : AuditedEntity<Guid>
     {
         [Required]

@@ -1,4 +1,5 @@
-﻿using Abp.Domain.Entities;
+﻿using Abp.AutoMapper;
+using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Text;
 
 namespace ControleVendas.Entities
 {
+
     public class Estado : AuditedEntity<Guid>
     {
         public Estado()
