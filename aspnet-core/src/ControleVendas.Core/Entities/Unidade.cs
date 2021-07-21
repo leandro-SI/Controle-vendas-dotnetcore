@@ -8,6 +8,16 @@ namespace ControleVendas.Entities
 {
     public class Unidade : AuditedEntity<Guid>
     {
+        public Unidade()
+        {
+        }
+
+        public Unidade(string sigla, string nome)
+        {
+            Sigla = sigla;
+            Nome = nome;
+        }
+
         [Required]
         [StringLength(20)]
         public string Sigla { get; set; }

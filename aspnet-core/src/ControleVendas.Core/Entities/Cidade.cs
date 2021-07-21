@@ -12,6 +12,17 @@ namespace ControleVendas.Entities
     [AutoMapTo(typeof(Cidade))]
     public class Cidade : AuditedEntity<Guid>
     {
+        public Cidade()
+        {
+        }
+
+        public Cidade(string nome, Estado estado, Guid estadoId)
+        {
+            Nome = nome;
+            Estado = estado;
+            EstadoId = estadoId;
+        }
+
         [Required]
         [StringLength(50)]
         public string Nome { get; set; }

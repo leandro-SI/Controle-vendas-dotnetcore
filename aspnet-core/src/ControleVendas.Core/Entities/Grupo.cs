@@ -6,6 +6,14 @@ namespace ControleVendas.Entities
 {
     public class Grupo : AuditedEntity<Guid>
     {
+        public Grupo()
+        {
+        }
+
+        public Grupo(string nome)
+        {
+            Nome = nome;
+        }
 
         [Required]
         [StringLength(50)]

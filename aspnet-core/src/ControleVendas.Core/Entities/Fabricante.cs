@@ -8,6 +8,16 @@ namespace ControleVendas.Entities
 {
     public class Fabricante : AuditedEntity<Guid>
     {
+        public Fabricante()
+        {
+        }
+
+        public Fabricante(string nome, string site)
+        {
+            Nome = nome;
+            Site = site;
+        }
+
         [Required]
         [StringLength(50)]
         public string Nome{ get; set; }
