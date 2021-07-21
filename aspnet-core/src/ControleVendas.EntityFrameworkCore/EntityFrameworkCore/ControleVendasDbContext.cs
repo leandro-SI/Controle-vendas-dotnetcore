@@ -18,6 +18,7 @@ namespace ControleVendas.EntityFrameworkCore
         public DbSet<Unidade> Unidade { get; set; }
         public DbSet<Tipo> Tipo { get; set; }
         public DbSet<Produto> Produto { get; set; }
+        public DbSet<Pessoa> Pessoa { get; set; }
 
         public ControleVendasDbContext(DbContextOptions<ControleVendasDbContext> options)
             : base(options)
