@@ -4,14 +4,16 @@ using ControleVendas.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ControleVendas.Migrations
 {
     [DbContext(typeof(ControleVendasDbContext))]
-    partial class ControleVendasDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210721123915_CREATE_Tipo")]
+    partial class CREATE_Tipo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
