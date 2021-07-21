@@ -22,6 +22,7 @@ namespace ControleVendas.EntityFrameworkCore
         public DbSet<Venda> Venda { get; set; }
         public DbSet<ItemVenda> ItemVenda { get; set; }
         public DbSet<Conta> Conta { get; set; }
+        public DbSet<PessoaGrupo> PessoaGrupo { get; set; }
 
         public ControleVendasDbContext(DbContextOptions<ControleVendasDbContext> options)
             : base(options)
