@@ -14,6 +14,7 @@ namespace ControleVendas.EntityFrameworkCore
         public DbSet<Estado> Estado { get; set; }
         public DbSet<Cidade> Cidade { get; set; }
         public DbSet<Grupo> Grupo { get; set; }
+        public DbSet<Fabricante> Fabricante { get; set; }
 
         public ControleVendasDbContext(DbContextOptions<ControleVendasDbContext> options)
             : base(options)
