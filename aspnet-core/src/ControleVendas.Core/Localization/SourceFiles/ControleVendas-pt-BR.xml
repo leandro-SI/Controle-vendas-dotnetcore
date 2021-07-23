@@ -106,5 +106,13 @@
     <text name="RoleDeleteWarningMessage">A função {0} será excluída e desassociada de todos os usuários pertencentes a ela.</text>
     <text name="TenantDeleteWarningMessage">O Tenant {0} será excluído.</text>
     <text name="SearchWithThreeDot">Pesquisar...</text>
+
+    <!--Cidade-->
+    <text name="ListarCidade">Listar Cidade</text>
+    <text name="DetalheCidade">Detalhes Cidade</text>
+    <text name="CriarCidade">Criar Cidade</text>
+    <text name="ExcluirCidade">Excluir Cidade</text>
+    <!--Cidade-->
+    
   </texts>
 </localizationDictionary>
