@@ -1,5 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
+using ControleVendas.ControleVendasApp.Estado.Dto;
 using ControleVendas.Entities;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace ControleVendas.ControleVendasApp.Cidade.Dto
         [StringLength(50)]
         public string Nome { get; set; }
 
-        public Estado Estado { get; set; }
+        public EstadoDto Estado { get; set; }
 
         [Required]
         public Guid? EstadoId { get; set; }
