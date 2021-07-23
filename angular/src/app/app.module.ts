@@ -39,6 +39,8 @@ import { SidebarLogoComponent } from './layout/sidebar-logo.component';
 import { SidebarUserPanelComponent } from './layout/sidebar-user-panel.component';
 import { SidebarMenuComponent } from './layout/sidebar-menu.component';
 
+import { CidadeComponent } from '@app/controle-vendas/cidade/cidade.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +69,10 @@ import { SidebarMenuComponent } from './layout/sidebar-menu.component';
     SidebarComponent,
     SidebarLogoComponent,
     SidebarUserPanelComponent,
-    SidebarMenuComponent
+    SidebarMenuComponent,
+
+    // Ccontrole de Vendas
+    CidadeComponent
   ],
   imports: [
     CommonModule,
