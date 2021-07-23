@@ -12,6 +12,8 @@ import { ChangePasswordComponent } from './users/change-password/change-password
 // Controle de Vendas
 
 import { CidadeComponent } from '@app/controle-vendas/cidade/cidade.component';
+import { CriarCidadeComponent } from '@app/controle-vendas/cidade/criar-cidade/criar-cidade.component';
+
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import { CidadeComponent } from '@app/controle-vendas/cidade/cidade.component';
                     { path: 'update-password', component: ChangePasswordComponent },
 
                     { path: 'cidade', component: CidadeComponent, data: { permission: 'ControleVendas.ListarCidade' }, canActivate: [AppRouteGuard] },
+                    { path: 'cidade/novo', component: CriarCidadeComponent, data: { permission: 'ControleVendas.CriarCidade' }, canActivate: [AppRouteGuard] },
 
                 ]
             }

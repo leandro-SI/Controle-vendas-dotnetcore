@@ -16,6 +16,7 @@ import { HttpClient, HttpHeaders, HttpResponse, HttpResponseBase } from '@angula
 
 import { CidadeDto } from '@shared/models/cidade/cidadeDto';
 import { CidadeDtoPagedResultDto } from '@shared/models/cidade/cidadeDtoPagedResultDto';
+import { CreateCidadeDto } from '@shared/models/cidade/createCidadeDto';
 
 
 import * as moment from 'moment';
@@ -329,6 +330,70 @@ export class CidadeServiceProxy {
     }
 
     protected processGet(response: HttpResponseBase): Observable<CidadeDto> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+                (<any>response).error instanceof Blob ? (<any>response).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); } };
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+                let result200: any = null;
+                let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+                result200 = CidadeDto.fromJS(resultData200);
+                return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+                return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<CidadeDto>(<any>null);
+    }
+
+    /**
+    * @param body (optional) 
+    * @return Success
+    */
+    create(body: CreateCidadeDto | undefined): Observable<CidadeDto> {
+        let url_ = this.baseUrl + "/api/services/app/cidade/Create";
+        url_ = url_.replace(/[?&]$/, "");
+        const content_ = JSON.stringify(body);
+
+        let options_: any = {
+            body: content_,
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Content-Type": "application/json-patch+json",
+                "Accept": "text/plain"
+            })
+        };
+
+        return this.http.request("post", url_, options_).pipe(_observableMergeMap((response_: any) => {
+            return this.processCreate(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processCreate(<any>response_);
+                } catch (e) {
+                    return <Observable<CidadeDto>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<CidadeDto>><any>_observableThrow(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processCreate(<any>response_);
+                } catch (e) {
+                    return <Observable<CidadeDto>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<CidadeDto>><any>_observableThrow(response_);
+        }));
+    }
+
+    protected processCreate(response: HttpResponseBase): Observable<CidadeDto> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
