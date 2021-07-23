@@ -1,15 +1,13 @@
 import * as moment from 'moment';
-import { EstadoDto } from '../estado/estadoDto';
 
-export class CidadeDto implements ICidadeDto {
+export class EstadoDto implements IEstadoDto {
     id: string;
     nome: string | undefined;
-    estadoId: string | undefined;
-    estado: EstadoDto | undefined;
+    sigla: string | undefined;
     lastLoginTime: moment.Moment | undefined;
     creationTime: moment.Moment;
     
-    constructor(data?: ICidadeDto) {
+    constructor(data?: IEstadoDto) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -19,8 +17,7 @@ export class CidadeDto implements ICidadeDto {
         else{
             this.id = "";
             this.nome = "";
-            this.estadoId = "";
-            this.estado = new EstadoDto();
+            this.sigla = "";
             this.creationTime = <any>undefined; 
 
         }
@@ -30,16 +27,15 @@ export class CidadeDto implements ICidadeDto {
         if (data) {
             this.id = data["id"];
             this.nome = data["nome"];
-            this.estadoId = data["estadoId"];
-            this.estado = data["estado"];
+            this.sigla = data["sigla"];
             this.creationTime = data["creationTime"] ? moment(data["creationTime"].toString()) : <any>undefined;
             
         }
     }
 
-    static fromJS(data: any): CidadeDto {
+    static fromJS(data: any): EstadoDto {
         data = typeof data === 'object' ? data : {};
-        let result = new CidadeDto();
+        let result = new EstadoDto();
         result.init(data);
         return result;
     }
@@ -48,16 +44,15 @@ export class CidadeDto implements ICidadeDto {
         data = typeof data === 'object' ? data : {};
         data["id"] = this.id;
         data["nome"] = this.nome;
-        data["estadoId"] = this.estadoId;
-        data["estado"] = this.estado;
+        data["sigla"] = this.sigla;
         data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
         
         return data; 
     }
 
-    clone(): CidadeDto {
+    clone(): EstadoDto {
         const json = this.toJSON();
-        let result = new CidadeDto();
+        let result = new EstadoDto();
         result.init(json);
         return result;
     }
@@ -71,10 +66,9 @@ export class CidadeDto implements ICidadeDto {
     }
 }
 
-export interface ICidadeDto {
+export interface IEstadoDto {
     id: string;
     nome: string | undefined;
-    estadoId: string | undefined;
-    estado: EstadoDto | undefined;
+    sigla: string | undefined;
     creationTime: moment.Moment;
 }

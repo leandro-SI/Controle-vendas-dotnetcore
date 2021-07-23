@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,6 +7,7 @@ using System.Text;
 
 namespace ControleVendas.ControleVendasApp.Estado.Dto
 {
+    [AutoMap(typeof(Entities.Estado))]
     public class EstadoDto : AuditedEntityDto<Guid>
     {
         public EstadoDto()
