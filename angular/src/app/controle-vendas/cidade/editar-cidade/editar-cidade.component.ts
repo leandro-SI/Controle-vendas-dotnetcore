@@ -92,6 +92,10 @@ export class EditarCidadeComponent extends AppComponentBase implements OnInit {
 
   }
 
+  public voltar(){
+    this._router.navigate(['/app/cidades/']);
+  }
+
   ngOnDestroy() {
     if (this.subscribParams) this.subscribParams.unsubscribe();
   }

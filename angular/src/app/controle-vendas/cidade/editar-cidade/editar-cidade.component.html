@@ -1,3 +1,57 @@
-<p>
-  editar-cidade works!
-</p>
+<div>
+  <form autocomplete="off" #createCidadeForm="ngForm" (ngSubmit)="salvar()">
+    <section class="content-header">
+      <div class="row">
+        <div class="col-6">
+          <h1>{{"AlterarCidade" | localize }}</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 text-left">
+          <button class="btn btn-primary-sec btn-navigate" (click)="voltar()">
+            <i class="fa fa-undo"></i>
+            {{"Back" | localize}}
+          </button>
+          <button type="submit" class="btn btn-primary-sec btn-navigate"
+            [disabled]="!createCidadeForm.form.valid || saving">
+            <i class="fas fa-save"></i>
+            {{"Save" | localize}}
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="card">
+          <div class="card-header">
+            <div class="form-group">
+              <div class="row">
+
+                <div class="col-4 form-group required">
+                  <label for="codigo" class="col-form-label">
+                    {{"Nome" | localize}}
+                  </label>
+                  <input type="text" class="form-control" name="nome" id="nome" [(ngModel)]="cidade.nome" maxlength="50"
+                    required #nomeModel="ngModel" #nomeModelEl>
+                  <abp-validation-summary [control]="nomeModel" [controlEl]="nomeModelEl">
+                  </abp-validation-summary>
+                </div>
+
+                <div class="col-12 col-md-4 form-group">
+                  <label class="col-form-label" for="estadoId">
+                    {{ "Estado" | localize }}
+                  </label>
+                  <ng-select bindValue="id" required [items]="estadoLista" bindLabel="nome"
+                    name="estadoId" id="estadoId" [(ngModel)]="cidade.estadoId"
+                    #estadoModel="ngModel" #estadoEl>
+                  </ng-select>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </form>
+</div>
