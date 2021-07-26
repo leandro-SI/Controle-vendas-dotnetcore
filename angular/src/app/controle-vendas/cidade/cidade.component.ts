@@ -66,6 +66,7 @@ export class CidadeComponent extends PagedListingComponentBase<CidadeDto> {
   }
 
   public editar(id:any){
+    this._router.navigate(['/app/cidade/editar/' + id]);
   }
 
   public voltar(){

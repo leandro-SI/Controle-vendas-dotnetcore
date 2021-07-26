@@ -42,6 +42,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 import { CidadeComponent } from '@app/controle-vendas/cidade/cidade.component';
 import { CriarCidadeComponent } from '@app/controle-vendas/cidade/criar-cidade/criar-cidade.component';
+import { EditarCidadeComponent } from '@app/controle-vendas/cidade/editar-cidade/editar-cidade.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { CriarCidadeComponent } from '@app/controle-vendas/cidade/criar-cidade/c
 
     // Ccontrole de Vendas
     CidadeComponent,
-    CriarCidadeComponent
+    CriarCidadeComponent,
+    EditarCidadeComponent
   ],
   imports: [
     CommonModule,
