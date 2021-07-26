@@ -59,6 +59,7 @@ export class CidadeComponent extends PagedListingComponentBase<CidadeDto> {
   }
 
   public novo(){
+    this._router.navigate(['/app/cidade/novo/']);
   }
 
   public detalhe(id:any){

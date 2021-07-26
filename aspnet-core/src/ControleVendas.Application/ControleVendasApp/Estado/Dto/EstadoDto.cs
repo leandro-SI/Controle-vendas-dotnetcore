@@ -10,10 +10,6 @@ namespace ControleVendas.ControleVendasApp.Estado.Dto
     [AutoMap(typeof(Entities.Estado))]
     public class EstadoDto : AuditedEntityDto<Guid>
     {
-        public EstadoDto()
-        {
-        }
-
         [Required]
         [StringLength(2)]
         public string Sigla { get; set; }
@@ -21,6 +17,5 @@ namespace ControleVendas.ControleVendasApp.Estado.Dto
         [Required]
         [StringLength(50)]
         public string Nome { get; set; }
-
     }
 }

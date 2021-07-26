@@ -18,6 +18,15 @@
         public const string ControleVendas_ExcluirCidade = "ControleVendas.ExcluirCidade";
         #endregion
 
+        #region ESTADO
+        public const string ControleVendas_Estado = "ControleVendas.Estado";
+        public const string ControleVendas_ListarEstado = "ControleVendas.ListarEstado";
+        public const string ControleVendas_DetalheEstado = "ControleVendas.DetalheEstado";
+        public const string ControleVendas_CriarEstado = "ControleVendas.CriarEstado";
+        public const string ControleVendas_AlterarEstado = "ControleVendas.AlterarEstado";
+        public const string ControleVendas_ExcluirEstado = "ControleVendas.ExcluirEstado";
+        #endregion
+
     }
 
 }

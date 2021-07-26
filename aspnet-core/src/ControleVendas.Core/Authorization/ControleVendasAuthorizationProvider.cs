@@ -21,6 +21,15 @@ namespace ControleVendas.Authorization
             context.CreatePermission(PermissionNames.ControleVendas_ExcluirCidade, L("ExcluirCidade"));
             #endregion
 
+            #region ESTADO
+            context.CreatePermission(PermissionNames.ControleVendas_Estado, L("Estado"));
+            context.CreatePermission(PermissionNames.ControleVendas_ListarEstado, L("ListarEstado"));
+            context.CreatePermission(PermissionNames.ControleVendas_DetalheEstado, L("DetalheEstado"));
+            context.CreatePermission(PermissionNames.ControleVendas_CriarEstado, L("CriarEstado"));
+            context.CreatePermission(PermissionNames.ControleVendas_AlterarEstado, L("AlterarEstado"));
+            context.CreatePermission(PermissionNames.ControleVendas_ExcluirEstado, L("ExcluirEstado"));
+            #endregion
+
 
 
         }

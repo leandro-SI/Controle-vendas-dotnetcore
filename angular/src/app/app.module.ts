@@ -38,6 +38,7 @@ import { SidebarComponent } from './layout/sidebar.component';
 import { SidebarLogoComponent } from './layout/sidebar-logo.component';
 import { SidebarUserPanelComponent } from './layout/sidebar-user-panel.component';
 import { SidebarMenuComponent } from './layout/sidebar-menu.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 import { CidadeComponent } from '@app/controle-vendas/cidade/cidade.component';
 import { CriarCidadeComponent } from '@app/controle-vendas/cidade/criar-cidade/criar-cidade.component';
@@ -90,6 +91,7 @@ import { CriarCidadeComponent } from '@app/controle-vendas/cidade/criar-cidade/c
     ServiceProxyModule,
     SharedModule,
     NgxPaginationModule,
+    NgSelectModule,
   ],
   providers: [],
   entryComponents: [
